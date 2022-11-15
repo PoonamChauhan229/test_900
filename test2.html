@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- input tags  -->
+    <!-- <input type="text"><br>
+    <input type="text"> -->
+    <!-- click on button form will get submitted
+    form which will get submited
+    onsubmit event handler
+
+    =>submit the form
+    =>click on button
+    =>using onsubmit method which is attached on the form it will the details.
+    -->
+
+    <form id="form">
+        <input type="text" name="" id="first_name" placeholder="firstname">
+
+        <button>Signin</button>
+        <!-- onclick -->
+    </form>
+    <style>
+        table{
+            border:1px solid red;
+        }
+    </style>
+    <script>
+        // onsubmit method for the form
+        // click
+        let first_name=document.getElementById('first_name')
+
+        let form =document.getElementById('form')
+        form.addEventListener("submit",function(event){
+            event.preventDefault()
+            console.log(first_name.value)
+            console.log("hi")
+            let divCreate=document.createElement('table')
+            divCreate.innerHTML=`
+
+                <tr>
+                    <td>My First name is :${first_name.value}
+                        </td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                </tr>
+            `           
+            document.body.append(divCreate)
+        })
+    </script>
+
+
+</body>
+</html>
